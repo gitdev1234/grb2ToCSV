@@ -84,9 +84,9 @@ function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)
         
         hourOfForecastCreationString     = name(16:17);
         hoursAfterForecastCreationString = name(21:23);
-        hourOfForcastCreation      = str2num(hourOfForecastCreationString);
-        hoursAfterForecastCreation = str2num(hoursAfterForecastCreationString);
-        dateOfForecastCreation     = datetime(dateOfForecastCreationString    , 'InputFormat','yyyyMMdd') ;
+        hourOfForcastCreation      = str2num(hourOfForecastCreationString)
+        hoursAfterForecastCreation = str2num(hoursAfterForecastCreationString, 'InputFormat','HHHH');
+        dateOfForecastCreation     = datetime(dateOfForecastCreationString    , 'InputFormat','yyyyMMdd') 
         
         timeStamp = dateOfForecastCreation + hours(hourOfForcastCreation) + hours(hoursAfterForecastCreation);
          
