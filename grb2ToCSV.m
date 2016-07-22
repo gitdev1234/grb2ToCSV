@@ -54,8 +54,6 @@
 %  19-Aug-2014 15:00:00, Relative_humidity_height_above_ground,      66.50
 %  19-Aug-2014 18:00:00, Temperature_height_above_ground      ,     288.80
 %  19-Aug-2014 18:00:00, Relative_humidity_height_above_ground,      72.20
-
-
 function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)  
     % init
     lat  = latitude_ 
@@ -73,7 +71,7 @@ function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)
     path = strcat(pathOfFolder, '/*.grb2');
 
     % create csv - file
-    fileID = fopen(strcat(pathOfFolder,strcat('/',nameOfCSVFile)),'w')
+    fileID = fopen(strcat(pathOfFolder,strcat('/',nameOfCSVFile)),'w');
 
     files = dir(path);
     size = length(files);
@@ -113,4 +111,5 @@ function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)
     end
 
     fclose(fileID);
+    deleteTemporaryFiles;
 end
