@@ -13,14 +13,16 @@ in the same folder like this file.
 
 The CSV-file only contains the data of the coordinates "latitude_" and 
 "longitude_" and only prints values of the variables which are defined 
-at "relevantVars" in line TODO.
+at "relevantVars" in line 65.
 
 The CSV-file has the structure : 
 timestamp, nameOfVariable, value
   
 The timestamp is automatically retrieved from the file-name. 
+```
 A file name like : gfs_4_20140819_0000_006.grb2 leads to a 
 time stamp like  : 19-Aug-2014 06:00:00
+```
   
 **PLEASE NOTICE THAT THE NAMING OF THE GRB2 MUST HAVE THE STRUCTURE**
 `gfs_4_20140819_0000_006.grb2`
@@ -67,8 +69,7 @@ with
 ```
 ##USE
 For to try grb2ToCSV do the following steps :
-1. clone this repository
-	`git clone git@github.com:gitdev1234/grb2ToCSV.git`
+1. clone this repository : `git clone git@github.com:gitdev1234/grb2ToCSV.git`
 2. install MATLAB (grb2ToCSV is only tested in MATLAB R2015b)
 3. copy example files from /example to the directory where matlab `grb2ToCSV.m, main.m, ...` are
 4. open all files *.m of this repository in matlab and add them to the MATLAB path
