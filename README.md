@@ -67,10 +67,16 @@ with
     19-Aug-2014 18:00:00, Temperature_height_above_ground  , 288.80
     19-Aug-2014 18:00:00, Relative_humidity_height_above_ground,  72.20
 ```
-##USE
-For to try grb2ToCSV do the following steps :
+##USE grb2ToCSV
 1. clone this repository : `git clone git@github.com:gitdev1234/grb2ToCSV.git`
 2. install MATLAB (grb2ToCSV is only tested in MATLAB R2015b)
 3. copy example files from /example to the directory where matlab `grb2ToCSV.m, main.m, ...` are
 4. open all files .m of this repository in matlab and add them to the MATLAB path
+5. execute main.m
+
+
+1. 
+2. 
+3. 
+4. 
 5. execute main.m
