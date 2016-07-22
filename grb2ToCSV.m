@@ -6,7 +6,7 @@
 %  
 %  The CSV-file only contains the data of the coordinates "latitude_" and 
 %  "longitude_" and only prints values of the variables which are defined 
-%  at "relevantVars" in line TODO.
+%  at "relevantVars" in line 65.
 %  
 %  The CSV-file has the structure : 
 %  timestamp, nameOfVariable, value
