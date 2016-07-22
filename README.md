@@ -70,6 +70,6 @@ with
 ##USE grb2ToCSV
 - clone this repository : `git clone git@github.com:gitdev1234/grb2ToCSV.git`
 - install MATLAB (grb2ToCSV is only tested in MATLAB R2015b)
-- copy example files from /example to the directory where matlab `grb2ToCSV.m, main.m, ...` are
+- copy example .grb2-files from /example to the directory where matlab `grb2ToCSV.m, main.m, ...` are
 - open all files .m of this repository in matlab and add them to the MATLAB path
 - execute main.m
