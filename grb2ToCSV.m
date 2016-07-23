@@ -40,20 +40,21 @@
 %       gfs_4_20140819_0000_018.grb2
 %
 %  a CSV-file is created like 
-%  19-Aug-2014 00:00:00, Temperature_height_above_ground      ,     289.30
-%  19-Aug-2014 00:00:00, Relative_humidity_height_above_ground,      70.80
-%  19-Aug-2014 03:00:00, Temperature_height_above_ground      ,     288.70
-%  19-Aug-2014 03:00:00, Relative_humidity_height_above_ground,      70.20
-%  19-Aug-2014 06:00:00, Temperature_height_above_ground      ,     288.20
-%  19-Aug-2014 06:00:00, Relative_humidity_height_above_ground,      73.00
-%  19-Aug-2014 09:00:00, Temperature_height_above_ground      ,     288.20
-%  19-Aug-2014 09:00:00, Relative_humidity_height_above_ground,      75.60
-%  19-Aug-2014 12:00:00, Temperature_height_above_ground      ,     288.50
-%  19-Aug-2014 12:00:00, Relative_humidity_height_above_ground,      74.00
-%  19-Aug-2014 15:00:00, Temperature_height_above_ground      ,     289.30
-%  19-Aug-2014 15:00:00, Relative_humidity_height_above_ground,      66.50
-%  19-Aug-2014 18:00:00, Temperature_height_above_ground      ,     288.80
-%  19-Aug-2014 18:00:00, Relative_humidity_height_above_ground,      72.20
+%   Temperature_height_above_ground       ,	19-Aug-2014 00:00:00Z,     289.30
+%   Relative_humidity_height_above_ground , 19-Aug-2014 00:00:00Z,      70.80
+%   Temperature_height_above_ground       , 19-Aug-2014 03:00:00Z,     288.70
+%   Relative_humidity_height_above_ground , 19-Aug-2014 03:00:00Z,      70.20
+%   Temperature_height_above_ground       , 19-Aug-2014 06:00:00Z,     288.20
+%   Relative_humidity_height_above_ground , 19-Aug-2014 06:00:00Z,      73.00
+%   Temperature_height_above_ground       , 19-Aug-2014 09:00:00Z,     288.20
+%   Relative_humidity_height_above_ground , 19-Aug-2014 09:00:00Z,      75.60
+%   Temperature_height_above_ground       , 19-Aug-2014 12:00:00Z,     288.50
+%   Relative_humidity_height_above_ground , 19-Aug-2014 12:00:00Z,      74.00
+%   Temperature_height_above_ground       , 19-Aug-2014 15:00:00Z,     289.30
+%   Relative_humidity_height_above_ground , 19-Aug-2014 15:00:00Z,      66.50
+%   Temperature_height_above_ground       , 19-Aug-2014 18:00:00Z,     288.80
+%   Relative_humidity_height_above_ground , 19-Aug-2014 18:00:00Z,      72.20
+
 function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)  
     % init
     lat  = latitude_ 
@@ -61,7 +62,9 @@ function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)
     nameOfCSVFile = nameOfCSVFile_ %'dump.csv'
 
     relevantVars = [{'Temperature_height_above_ground';
-                     'Relative_humidity_height_above_ground'}]
+                     'Relative_humidity_height_above_ground';
+                     'u-component_of_wind_height_above_ground';
+                     'v-component_of_wind_height_above_ground'}]
 
     % get current path
     pathOfFile = mfilename('fullpath');
@@ -107,8 +110,8 @@ function grb2ToCSV(latitude_, longitude_, nameOfCSVFile_)
                 [y,x] = calcArrayCoordinates(lat,long);
                 dataPoint = data(:,:,y,x); 
                 % merge data into matrix
-                timeStampString = char(timeStamp);
-                fprintf(fileID,'%s, %s, %10.2f\n',timeStampString,var,dataPoint);
+                timeStampString = strcat(char(timeStamp),'Z');
+                fprintf(fileID,'%s, %s, %10.2f\n',var,timeStampString,dataPoint);
             end
         end
         filenumber = filenumber + 1;
