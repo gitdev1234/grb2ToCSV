@@ -1,16 +1,16 @@
-#grb2ToCSV - converting grib2-files to simple csv-text-files
+# grb2ToCSV - converting grib2-files to simple csv-text-files
 A matlab implementation for converting grb2-files (grib2) into a simple CSV-file
 
-##!Attention!
+## !Attention!
 Please note that this project is developed as a MATLAB - beginner - project.
 Therefore the design, syntax and the programming style might not be perfect.
 
-##Need for improvement
+## Need for improvement
 Please note, that this grib2->CSV converter currently only works on grib2 files downloaded at : http://nomads.ncdc.noaa.gov/cgi-bin/ncdc-ui/define-collection.pl?model_sys=gfs4&model_name=gfs&grid_name=4
 It is not tested for any other grib2-files.
 The grib2-files provided by the upper url contain 0.5 degree gridded data. If you want to use it for different degree resolutions or for grib2-files from other sources please modify the way of calculating the array coordinates by the geographic coordinates in `calcArrayCoordinates.m` and the way you get the data out of the data-array inside `grb2ToCSV.m`.
 
-##Description
+## Description
 This function can convert all grib2 files within the same directory 
 like this file to one CSV-file (comma-separated-value text file). 
 The CSV-file is named like the parameter "nameOfCSVFile_" and is created
@@ -72,7 +72,7 @@ with
     19-Aug-2014 18:00:00, Temperature_height_above_ground  , 288.80
     19-Aug-2014 18:00:00, Relative_humidity_height_above_ground,  72.20
 ```
-##USE grb2ToCSV
+## USE grb2ToCSV
 - clone this repository : `git clone git@github.com:gitdev1234/grb2ToCSV.git`
 - install MATLAB (grb2ToCSV is only tested in MATLAB R2015b)
 - copy example .grb2-files from /example to the directory where matlab `grb2ToCSV.m, main.m, ...` are
